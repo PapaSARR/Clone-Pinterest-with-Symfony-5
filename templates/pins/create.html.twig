@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Formulaire de création de pin</h1>
+
+        <!--
+        <form method="post">
+            <div>
+                <label for="title">Titre :</label>
+                <br/>
+                <input type="text" id="title" name="title">
+            </div>
+            <div>
+                <label for="desc">Description :</label>
+                <br/>
+                <textarea id="desc" name="desc" rows="5" cols="50"></textarea>
+            </div>
+            <input type="submit" value="Créer pin">
+        </form>
+        -->
+        <!--Affichage du formualaire créé dans le controller à l'aide de formBuilder-->
+        {{ form(form) }}
+    </div>
+{% endblock %}
