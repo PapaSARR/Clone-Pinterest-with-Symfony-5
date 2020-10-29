@@ -32,7 +32,7 @@ class PinsController extends AbstractController
 
         //Pour récupérer les données enregistrées
         //$pinRepo = $em->getRepository('App\Entity\Pin');
-        $pins =  $pinRepo->findAll();
+        $pins =  $pinRepo->findBy([],['createdAt'=>'DESC']); // Récuppérer tous les pins par ordre descendant selon la date de création
         //dd($pins);
 
         return $this->render('pins/index.html.twig', [
