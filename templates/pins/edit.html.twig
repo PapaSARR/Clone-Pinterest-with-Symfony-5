@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit form{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <h1>Edit pin #{{ pin.id}}</h1>
+
+        <!--Display form created in the controllor with formBuilder-->
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Edit Pin"/>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

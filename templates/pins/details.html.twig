@@ -3,9 +3,10 @@
 {% block title %}{{ pin.title }}{% endblock %}
 
 {% block body %}
-    <article>
-        <h3>Title: {{ pin.title }}</h3>
-        <p>Description: {{ pin.description }}</p>
-        <a href={{path("app_home")}}>Retour à la page d'accueil</a>
-    </article>
+
+    <h3>Title: {{ pin.title }}</h3>
+    <p>Description: {{ pin.description }}</p>
+    <a href={{path("app_pin_edit", {id: pin.id})}}>Edit</a> |
+    <a href={{path("app_home")}}>Go home</a>
+
 {% endblock %}

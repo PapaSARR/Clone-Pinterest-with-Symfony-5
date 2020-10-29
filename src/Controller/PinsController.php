@@ -32,8 +32,8 @@ class PinsController extends AbstractController
 
         //Pour récupérer les données enregistrées
         //$pinRepo = $em->getRepository('App\Entity\Pin');
-        $pins =  $pinRepo->findBy([],['createdAt'=>'DESC']); // Récuppérer tous les pins par ordre descendant selon la date de création
-        //dd($pins);
+        // Recover all pins by descending order according to createdAt field
+        $pins =  $pinRepo->findBy([],['createdAt'=>'DESC']);
 
         return $this->render('pins/index.html.twig', [
             'pins' => $pins, //On passe la variable à la vue
@@ -64,7 +64,7 @@ class PinsController extends AbstractController
         $form = $this->createFormBuilder($pin)
             ->add('title', TextType::class)
             ->add('description', TextareaType::class)
-            ->add('submit', SubmitType::class, ['label' => 'Créer un pin'])
+            //->add('submit', SubmitType::class, ['label' => 'Créer un pin'])
             ->getForm();
 
         $form->handleRequest($request);
@@ -85,5 +85,22 @@ class PinsController extends AbstractController
     {
         //dd($pin);
         return $this->render('pins/details.html.twig', ['pin'=>$pin]);
+    }
+
+    /**
+     * @Route("pins/{id<[0-9]*>}/edit",name="app_pin_edit", methods={"GET","POST"})
+     */
+    public function edit(Pin $pin, Request $request, EntityManagerInterface $em):Response
+    {
+        $form = $this->createFormBuilder($pin)
+        ->add('title', TextType::class)
+        ->add('description', TextareaType::class)
+        ->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->flush();
+            return $this->redirectToRoute("app_home");
+        }
+        return $this->render('pins/edit.html.twig', ['pin'=>$pin, 'form'=>$form->createView()]);
     }
 }
