@@ -6,10 +6,7 @@
     <div class="example-wrapper">
         <h1>Edit pin #{{ pin.id}}</h1>
 
-        <!--Display form created in the controllor with formBuilder-->
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Edit Pin"/>
-        {{ form_end(form) }}
+        <!--Display form created in the controllerr with formBuilder-->
+        {{ include('pins/partials/_form.html.twig', {submitButtonText : 'Update'}) }}
     </div>
 {% endblock %}
