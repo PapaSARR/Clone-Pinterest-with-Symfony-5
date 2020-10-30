@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Pin;
+use App\Form\PinType;
 use App\Repository\PinRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,11 +16,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PinsController extends AbstractController
 {
+    private $em, $pinRepo;
+    public function __construct(EntityManagerInterface $em, PinRepository $pinRepo){
+    $this->em = $em;
+    $this->pinRepo = $pinRepo;
+    }
 
     /**
      * @Route("/",name="app_home")
      */
-    public function index(PinRepository $pinRepo): Response
+    public function index(): Response
     {
         //Pour enregistrer des données dans la bd
         /*
@@ -33,7 +39,7 @@ class PinsController extends AbstractController
         //Pour récupérer les données enregistrées
         //$pinRepo = $em->getRepository('App\Entity\Pin');
         // Recover all pins by descending order according to createdAt field
-        $pins =  $pinRepo->findBy([],['createdAt'=>'DESC']);
+        $pins =  $this->pinRepo->findBy([],['createdAt'=>'DESC']);
 
         return $this->render('pins/index.html.twig', [
             'pins' => $pins, //On passe la variable à la vue
@@ -43,7 +49,7 @@ class PinsController extends AbstractController
     /**
      * @Route("/pins/create", name="app_pin_create", methods={"GET","POST"})
      */
-    public function create(Request $request, EntityManagerInterface $em): Response
+    public function create(Request $request): Response
     {
         /**
         if($request->isMethod("POST")){
@@ -61,16 +67,19 @@ class PinsController extends AbstractController
          */
 
         $pin = new Pin();
+        /*
         $form = $this->createFormBuilder($pin)
             ->add('title', TextType::class)
             ->add('description', TextareaType::class)
             //->add('submit', SubmitType::class, ['label' => 'Créer un pin'])
             ->getForm();
-
+        */
+        //Creation of the form in src/Form/PinType class with make:form command to avoid repetitions in the code
+        $form = $this->createForm(PinType::class, $pin);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($pin);
-            $em->flush();
+            $this->em->persist($pin);
+            $this->em->flush();
             return $this->redirectToRoute("app_home");
         }
         return $this->render('pins/create.html.twig', [
@@ -88,19 +97,31 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("pins/{id<[0-9]*>}/edit",name="app_pin_edit", methods={"GET","POST"})
+     * @Route("pins/{id<[0-9]*>}/edit",name="app_pin_edit", methods={"GET","PUT"})
      */
-    public function edit(Pin $pin, Request $request, EntityManagerInterface $em):Response
+    public function edit(Pin $pin):Response
     {
+        /*
         $form = $this->createFormBuilder($pin)
         ->add('title', TextType::class)
         ->add('description', TextareaType::class)
         ->getForm();
-        $form->handleRequest($request);
+        */
+        $form = $this->createForm(PinType::class, $pin, ['method'=>'PUT']);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->flush();
+            $this->em->flush();
             return $this->redirectToRoute("app_home");
         }
         return $this->render('pins/edit.html.twig', ['pin'=>$pin, 'form'=>$form->createView()]);
+    }
+
+    /**
+     * @Route("pins/{id<[0-9]*>}/delete",name="app_pin_delete", methods={"DELETE"})
+     */
+    public function delete(Pin $pin):Response
+    {
+        $this->em->remove($pin);
+        $this->em->flush();
+        return $this->redirectToRoute("app_home");
     }
 }

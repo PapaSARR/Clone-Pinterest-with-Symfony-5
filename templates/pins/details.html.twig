@@ -6,7 +6,13 @@
 
     <h3>Title: {{ pin.title }}</h3>
     <p>Description: {{ pin.description }}</p>
-    <a href={{path("app_pin_edit", {id: pin.id})}}>Edit</a> |
-    <a href={{path("app_home")}}>Go home</a>
+    <a href={{path('app_pin_edit', {id: pin.id})}}>Edit</a> |
+    <a href="#" onclick="event.preventDefault(); confirm('Are you sure?') && document.getElementById('js-delete-form').submit();">Delete</a> |
+    <a href={{path('app_home')}}>Go home</a>
+
+    <form id="js-delete-form" action="{{ path('app_pin_delete', {id: pin.id}) }}" method="post" style="display: none;">
+        <input type="hidden" name="_method" value="DELETE">
+        <!-- <input type="submit" value="Delete"/> -->
+    </form>
 
 {% endblock %}
