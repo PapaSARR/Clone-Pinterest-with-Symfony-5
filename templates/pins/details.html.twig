@@ -11,7 +11,7 @@
     <a href={{path('app_home')}}>Go home</a>
 
     <form id="js-delete-form" action="{{ path('app_pin_delete', {id: pin.id}) }}" method="post" style="display: none;">
-        <input type="hidden" name="_method" value="{{ csrf_token('123') }}"> <!--To protect against csrf attack-->
+        <input type="hidden" name="csrf_token" value="{{ csrf_token('pin_csrf') }}"> <!--To protect against csrf attack-->
         <input type="hidden" name="_method" value="DELETE">
         <!-- <input type="submit" value="Delete"/> -->
     </form>

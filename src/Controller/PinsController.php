@@ -80,6 +80,7 @@ class PinsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->persist($pin);
             $this->em->flush();
+            $this->addFlash('success','Pin successfully created');
             return $this->redirectToRoute("app_home");
         }
         return $this->render('pins/create.html.twig', [
@@ -88,7 +89,7 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("pins/{id<[0-9]*>}",name="app_pin_details")
+     * @Route("pins/{id<[0-9]*>}",name="app_pin_details", methods={"GET"})
      */
     public function details(Pin $pin):Response
     {
@@ -110,6 +111,7 @@ class PinsController extends AbstractController
         $form = $this->createForm(PinType::class, $pin, ['method'=>'PUT']);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->flush();
+            $this->addFlash('success','Pin successfully updated');
             return $this->redirectToRoute("app_home");
         }
         return $this->render('pins/edit.html.twig', ['pin'=>$pin, 'form'=>$form->createView()]);
@@ -120,10 +122,12 @@ class PinsController extends AbstractController
      */
     public function delete(Request $request,Pin $pin):Response
     {
+        //dd($request->request->get('csrf_token'));
 
-        if($this->isCsrfTokenValid('123',$request->request->get('csrf_token'))){
+        if($this->isCsrfTokenValid('pin_csrf', $request->request->get('csrf_token'))){
             $this->em->remove($pin);
             $this->em->flush();
+            $this->addFlash('info','Pin successfully deleted');
         }
         return $this->redirectToRoute("app_home");
 
