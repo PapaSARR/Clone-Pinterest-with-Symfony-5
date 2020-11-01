@@ -11,14 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5a64386-55a7-4c75-a755-85837d04cdea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/pins/partials/_footer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pins/partials/_nav.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pinterest_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pinterest_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pins/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pins/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pins/partials/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/partials/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +145,7 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/theofidry/psysh-bundle" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jKY2ZVkjV7pIAAazowdbZUTPha" />
@@ -165,6 +167,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -183,7 +186,8 @@
       <workItem from="1603554047053" duration="717000" />
       <workItem from="1603564671434" duration="23491000" />
       <workItem from="1603832910104" duration="33298000" />
-      <workItem from="1604174270279" duration="20156000" />
+      <workItem from="1604174270279" duration="20876000" />
+      <workItem from="1604258795910" duration="6510000" />
     </task>
     <servers />
   </component>
