@@ -3,10 +3,12 @@
 {% block title %}Edit form{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <h1>Edit pin #{{ pin.id}}</h1>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1>Edit pin #{{ pin.id}}</h1>
 
-        <!--Display form created in the controllerr with formBuilder-->
-        {{ include('pins/partials/_form.html.twig', {submitButtonText : 'Update'}) }}
+            {{ include('pins/partials/_form.html.twig', {submitButtonText : 'Update'}) }}
+        </div>
+
     </div>
 {% endblock %}
