@@ -100,7 +100,7 @@ class PinsController extends AbstractController
     /**
      * @Route("pins/{id<[0-9]*>}/edit",name="app_pin_edit", methods={"GET","PUT"})
      */
-    public function edit(Pin $pin):Response
+    public function edit(Request $request, Pin $pin):Response
     {
         /*
         $form = $this->createFormBuilder($pin)
@@ -109,6 +109,7 @@ class PinsController extends AbstractController
         ->getForm();
         */
         $form = $this->createForm(PinType::class, $pin, ['method'=>'PUT']);
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->flush();
             $this->addFlash('success','Pin successfully updated');
