@@ -11,9 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5a64386-55a7-4c75-a755-85837d04cdea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PinType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PinType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Pin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +183,8 @@
       <workItem from="1603832910104" duration="33298000" />
       <workItem from="1604174270279" duration="20876000" />
       <workItem from="1604258795910" duration="7164000" />
-      <workItem from="1604331028816" duration="9416000" />
+      <workItem from="1604331028816" duration="9784000" />
+      <workItem from="1604355076949" duration="853000" />
     </task>
     <servers />
   </component>

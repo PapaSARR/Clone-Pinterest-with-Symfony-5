@@ -44,7 +44,7 @@ class Pin
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
      * @Vich\UploadableField(mapping="pin_picture", fileNameProperty="pictureName")
-     *
+     * @Assert\Image(maxSize="8M")
      * @var File|null
      */
     private $pictureFile;
