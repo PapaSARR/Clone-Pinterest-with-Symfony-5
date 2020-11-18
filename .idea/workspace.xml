@@ -10,10 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5a64386-55a7-4c75-a755-85837d04cdea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pin.php" afterDir="false" />
-    </list>
+    <list default="true" id="e5a64386-55a7-4c75-a755-85837d04cdea" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +181,12 @@
       <workItem from="1604174270279" duration="20876000" />
       <workItem from="1604258795910" duration="7164000" />
       <workItem from="1604331028816" duration="9784000" />
-      <workItem from="1604355076949" duration="853000" />
+      <workItem from="1604355076949" duration="5483000" />
+      <workItem from="1604534773967" duration="8770000" />
+      <workItem from="1604781177406" duration="144000" />
+      <workItem from="1604805712504" duration="91000" />
+      <workItem from="1605727230817" duration="11000" />
+      <workItem from="1605732944556" duration="1089000" />
     </task>
     <servers />
   </component>

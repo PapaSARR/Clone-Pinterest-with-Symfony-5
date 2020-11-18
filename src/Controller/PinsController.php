@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Pin;
 use App\Form\PinType;
 use App\Repository\PinRepository;
@@ -17,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PinsController extends AbstractController
 {
     private $em, $pinRepo;
+
     public function __construct(EntityManagerInterface $em, PinRepository $pinRepo){
     $this->em = $em;
     $this->pinRepo = $pinRepo;
