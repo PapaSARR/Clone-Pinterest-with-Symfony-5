@@ -11,7 +11,8 @@ import './styles/app.scss';
 import $ from 'jquery';
 import 'bootstrap';
 
-$('.custom-file-input').on('change', function (e){
-    var inputFile = e.currentTarget();
+$('#pin_pictureFile_file').on('change', function (e){
+    //alert('Changement');
+    var inputFile = e.currentTarget;
     $(inputFile).parent().find('.custom-file-label').html(inputFile.files[0].name);
 });
