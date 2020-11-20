@@ -1,0 +1,27 @@
+# See dos how to configure the bundle: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    driver: "gd"
+
+    filter_sets:
+        # the name of the "filter set"
+        thumb_medium:
+            # list of transformations to apply (the "filters")
+            filters:
+                # use and setup the "thumbnail" filter
+                thumbnail:
+                    # set the thumbnail size to "300x300" pixels
+                    size: [300, 300]
+                    # crop the input image, if required
+                    mode: outbound
+        thumb_small:
+            # list of transformations to apply (the "filters")
+            filters:
+                # use and setup the "thumbnail" filter
+                thumbnail:
+                    # set the thumbnail size to "200x200" pixels
+                    size: [ 200, 200 ]
+                    # crop the input image, if required
+                    mode: outbound
+
+
+
