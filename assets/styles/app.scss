@@ -1,4 +1,3 @@
-@import "~bootstrap/scss/bootstrap";
 
 .alert{
     padding: 10px;
@@ -11,3 +10,23 @@
         background-color: blue;
     }
 }
+
+.form-check{
+    @extend .mt-4
+}
+
+.vich-image{
+    img{
+        @extend .shadow;
+        @extend .rounded;
+    }
+}
+
+.pic{
+    img:hover{
+        transform: scale(1.075);
+        transition: transform 0.3s;
+    }
+}
+
+@import "~bootstrap/scss/bootstrap";

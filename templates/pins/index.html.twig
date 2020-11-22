@@ -3,29 +3,27 @@
 {% block title %}Home page{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Welcome to our App!</h1>
+    <h1 class="text-center">Welcome to our App!</h1>
     <hr/>
     <br/>
-    <h3>{{ pluralize(pins|length) }} in total: </h3>
-    <table class="table table-hover">
-        <tr>
-            <th>Pin title</th>
-            <th>Pin description</th>
-            <th>Creation date</th>
-        </tr>
-        {% for pin in pins %}
-        <tr>
-           <td><a href={{path("app_pin_details", {id: pin.id})}}>{{ pin.title}}</a></td>
-            <td>{{ pin.description }}</td>
-            <td>{{ pin.createdAt | date }}</td>
-        </tr>
+    <h3 class="text-center mb-4">{{ pluralize(pins|length) }} in total: </h3>
+    {% for row in pins | batch(3) %}
+        <div class="row mb-4">
+        {% for pin in row %}
+            <article class="thumbnail col-4 shadow round">
+                <div class="pic overflow-hidden">
+                    <a href="{{path('app_pin_details', {id: pin.id})}}">
+
+                        <img src="{{ vich_uploader_asset(pin) | imagine_filter('thumb_medium') }}" alt="{{ pin.title }}" class="w-100 rounded"/>
+                    </a>
+                </div>
+                <a href="{{path('app_pin_details', {id: pin.id})}}" class="text-muted text-decoration-none text-secondary "><h5 class="pl-2 pt-4">{{ pin.title }}</h5></a>
+
+
+                <p class="text-muted pl-2">Submitted by OWNER</p>
+            </article>
         {% endfor %}
-    </table>
-</div>
+        </div>
+    {% endfor %}
 {% endblock %}

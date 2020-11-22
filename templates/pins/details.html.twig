@@ -6,7 +6,7 @@
 
     <h3>Title: {{ pin.title }}</h3>
     <p>Description: {{ pin.description }}</p>
-    <a href={{path('app_pin_edit', {id: pin.id})}}>Edit</a> |
+    <a href="{{path('app_pin_edit', {id: pin.id})}}">Edit</a> |
     <a href="#" onclick="event.preventDefault(); confirm('Are you sure?') && document.getElementById('js-delete-form').submit();">Delete</a>
 
     <form id="js-delete-form" action="{{ path('app_pin_delete', {id: pin.id}) }}" method="post" style="display: none;">
