@@ -7,23 +7,30 @@
     <h1 class="text-center">Welcome to our App!</h1>
     <hr/>
     <br/>
-    <h3 class="text-center mb-4">{{ pluralize(pins|length) }} in total: </h3>
+    <h3 class="text-center mb-4">{{ pluralize(pins|length) }} in total</h3>
     {% for row in pins | batch(3) %}
         <div class="row mb-4">
         {% for pin in row %}
-            <article class="thumbnail col-4 shadow round">
+            <article class="thumbnail col-md-4 shadow round">
                 <div class="pic overflow-hidden">
                     <a href="{{path('app_pin_details', {id: pin.id})}}">
 
                         <img src="{{ vich_uploader_asset(pin) | imagine_filter('thumb_medium') }}" alt="{{ pin.title }}" class="w-100 rounded"/>
                     </a>
                 </div>
-                <a href="{{path('app_pin_details', {id: pin.id})}}" class="text-muted text-decoration-none text-secondary "><h5 class="pl-2 pt-4">{{ pin.title }}</h5></a>
+                <a href="{{path('app_pin_details', {id: pin.id})}}" class="link_c"><h5 class="pl-2 pt-4">{{ pin.title }}</h5></a>
 
 
                 <p class="text-muted pl-2">Submitted by OWNER</p>
             </article>
         {% endfor %}
         </div>
+        {% else %}
+            <div class="row text-center">
+                <div class="col-md-6 mx-auto">
+                    <p>No pins created yet, <a href="{{ path('app_pin_create')}}" class="link_c"><h3>Be the First!</h3></a></p>
+                </div>
+            </div>
     {% endfor %}
+
 {% endblock %}

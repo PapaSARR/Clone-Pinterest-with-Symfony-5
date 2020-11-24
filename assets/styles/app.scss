@@ -28,5 +28,8 @@
         transition: transform 0.3s;
     }
 }
+.link_c{
+    @extend .text-muted, .text-decoration-none, .text-secondary;
+}
 
 @import "~bootstrap/scss/bootstrap";
