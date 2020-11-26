@@ -38,7 +38,7 @@ trait Timestampable{
         return $this;
     }
 
-    //Function for updating timestamps fiels during PrePersist and PreUpdate events
+    //Function for updating timestamps fields during PrePersist and PreUpdate events
     /**
      * @ORM\PrePersist
      * @ORM\PreUpdate

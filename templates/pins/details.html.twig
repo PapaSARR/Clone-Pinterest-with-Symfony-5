@@ -8,7 +8,7 @@
             <img src="{{ vich_uploader_asset(pin) | imagine_filter('thumb_medium') }}" alt="{{ pin.title }}" class="w-100 rounded"/>
             <h3 class="text-muted pl-2 pt-2 pb-2">{{ pin.title }}</h3>
             <p class="text-muted pl-2"><small>Submitted {{ pin.createdAt | ago }} by OWNER</small></p>
-            <p><small class="text-muted  pl-2 pb-4">{{ pin.description }}</small></p>
+            <p><small class="text-muted  pl-2 pb-4">{{ pin.description | u.truncate(20, '...', false)}}</small></p>
             <div class="pl-2">
                 <a class="btn btn-dark" href="{{path('app_pin_edit', {id: pin.id})}}">Edit</a>
                 <a class="btn btn-dark" href="#" onclick="event.preventDefault(); confirm('Are you sure?') && document.getElementById('js-delete-form').submit();">Delete</a>
@@ -19,7 +19,6 @@
                 </form>
             </div>
         </article>
-
     </div>
 
 
