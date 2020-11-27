@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1>Please sign in</h1>
+            {{ include('pins/partials/_formUser.html.twig', {submitButtonText : 'Sign in'}) }}
+        </div>
+    </div>
+{% endblock %}

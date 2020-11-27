@@ -13,8 +13,11 @@
     <list default="true" id="e5a64386-55a7-4c75-a755-85837d04cdea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20201125220128.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pins/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/create.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pins/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pins/partials/_formUser.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pins/partials/_formUser.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +206,7 @@
       <workItem from="1606068736623" duration="14068000" />
       <workItem from="1606245286683" duration="7421000" />
       <workItem from="1606326491449" duration="7747000" />
-      <workItem from="1606403921659" duration="5192000" />
+      <workItem from="1606403921659" duration="12518000" />
     </task>
     <servers />
   </component>
@@ -227,10 +230,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="443" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1603988605497" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606341495511">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606428766526">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606341495511" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606428766526" />
     <state x="459" y="276" key="ComposerInitDialogKey" timestamp="1604335410854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
