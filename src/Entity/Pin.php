@@ -54,6 +54,11 @@ class Pin
      */
     private $pictureName;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="pins")
+     */
+    private $user;
+
 
     public function getId(): ?int
     {
@@ -111,6 +116,18 @@ class Pin
     public function setPictureName(?string $pictureName): self
     {
         $this->pictureName = $pictureName;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

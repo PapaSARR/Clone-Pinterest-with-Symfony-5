@@ -21,7 +21,7 @@
                 <a href="{{path('app_pin_details', {id: pin.id})}}" class="link_c"><h5 class="pl-2 pt-4">{{ pin.title }}</h5></a>
 
 
-                <p class="text-muted pl-2">Submitted by OWNER</p>
+                <p class="text-muted pl-2">Submitted by {{ pin.user.firstname }}</p>
             </article>
         {% endfor %}
         </div>
