@@ -3,12 +3,13 @@
     padding: 10px;
     color: white;
     text-align: center;
-    &.alert-success{
-        background-color: green;
-    }
-    &.alert-info{
-        background-color: blue;
-    }
+}
+.alert-success{
+    background-color: green;
+}
+
+.alert-info{
+    background-color: blue;
 }
 
 .form-check{

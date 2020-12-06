@@ -29,6 +29,7 @@ class PinsController extends AbstractController
      */
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         //Pour enregistrer des données dans la bd
         /*
         $pin = new Pin();
