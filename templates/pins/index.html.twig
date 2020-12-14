@@ -15,7 +15,7 @@
                 <div class="pic overflow-hidden">
                     <a href="{{path('app_pin_details', {id: pin.id})}}">
 
-                        <img src="{{ vich_uploader_asset(pin) | imagine_filter('thumb_medium') }}" alt="{{ pin.title }}" class="w-100 rounded"/>
+                        <img src="{{ (pin.pictureName? vich_uploader_asset(pin): asset('images/default-placeholder.png')) | imagine_filter('thumb_medium') }}" alt="{{ pin.title }}" class="w-100 rounded"/>
                     </a>
                 </div>
                 <a href="{{path('app_pin_details', {id: pin.id})}}" class="link_c"><h5 class="pl-2 pt-4">{{ pin.title }}</h5></a>
