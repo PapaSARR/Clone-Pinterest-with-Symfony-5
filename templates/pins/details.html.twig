@@ -9,6 +9,7 @@
             <h3 class="text-muted pl-2 pt-2 pb-2">{{ pin.title }}</h3>
             <p class="text-muted pl-2"><small>Submitted {{ pin.createdAt | ago }} by {{ pin.user.firstname }}</small></p>
             <p><small class="text-muted  pl-2 pb-4">{{ pin.description | u.truncate(20, '...', false)}}</small></p>
+            {% if app.user == pin.user %}
             <div class="pl-2">
                 <a class="btn btn-dark" href="{{path('app_pin_edit', {id: pin.id})}}">Edit</a>
                 <a class="btn btn-dark" href="#" onclick="event.preventDefault(); confirm('Are you sure?') && document.getElementById('js-delete-form').submit();">Delete</a>
@@ -18,6 +19,7 @@
                     <!-- <input type="submit" value="Delete"/> -->
                 </form>
             </div>
+            {% endif %}
         </article>
     </div>
 
