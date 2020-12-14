@@ -12,7 +12,7 @@
         {# Flash messags #}
         {% for label, messages in app.flashes %}
             {% for message in messages %}
-                <div class="alert alert-{{ label }}">
+                <div id="flash" class="alert alert-{{ label }}">
                    {{ message }}
                 </div>
             {% endfor %}
